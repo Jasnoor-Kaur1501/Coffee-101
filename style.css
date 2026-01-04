@@ -6,131 +6,43 @@
 }
 
 body {
+  background: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+
+header {
+  padding: 40px 20px;
+  text-align: center;
   background: #0f172a;
-  color: #e5e7eb;
+  color: white;
 }
 
-/* Header */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background: #020617;
-}
-
-.navbar h1 {
-  font-size: 22px;
-}
-
-.navbar button {
-  background: transparent;
-  border: 1px solid #334155;
-  color: #e5e7eb;
-  padding: 8px 14px;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-left: 8px;
-}
-
-.navbar button.active {
-  background: #2563eb;
-  border-color: #2563eb;
-}
-
-/* Layout */
-.container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 24px;
-  padding: 40px;
-}
-
-/* Menu */
-.menu h2 {
-  margin-bottom: 16px;
-}
-
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 16px;
-}
-
-.card {
-  background: #020617;
-  border: 1px solid #1e293b;
-  padding: 16px;
-  border-radius: 14px;
-  transition: 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  border-color: #2563eb;
-}
-
-.card h3 {
-  font-size: 16px;
-  margin-bottom: 6px;
-}
-
-.card p {
-  font-size: 13px;
+.tagline {
   opacity: 0.7;
+  margin-top: 6px;
 }
 
-.card button {
-  margin-top: 10px;
-  width: 100%;
-  background: #2563eb;
-  border: none;
-  color: white;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
+main {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-/* Cart */
-.cart {
-  background: #020617;
-  border: 1px solid #1e293b;
-  padding: 20px;
-  border-radius: 16px;
+section {
+  margin-bottom: 32px;
 }
 
-.cart h2 {
-  margin-bottom: 12px;
+h2 {
+  margin-bottom: 10px;
 }
 
-.cart ul {
-  list-style: none;
-  margin-bottom: 12px;
+ul {
+  padding-left: 20px;
 }
 
-.cart li {
-  font-size: 14px;
-  margin-bottom: 6px;
-}
-
-.total {
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.checkout {
-  width: 100%;
-  background: #16a34a;
-  border: none;
-  padding: 10px;
-  border-radius: 10px;
-  color: white;
-  cursor: pointer;
-}
-
-/* Footer */
 footer {
   text-align: center;
   padding: 20px;
-  opacity: 0.5;
+  opacity: 0.6;
 }
