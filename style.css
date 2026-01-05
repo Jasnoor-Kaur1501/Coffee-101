@@ -1,112 +1,132 @@
+:root {
+  --bg: #F4EFEA;
+  --ink: #2B1B17;
+  --brown: #4E342E;
+  --crema: #C7A17A;
+  --paper: #EFE6D8;
+}
+
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: system-ui, sans-serif;
+  font-family: Inter, system-ui, sans-serif;
 }
+
 body {
-  background: #f6f7fb;
-  color: #111;
-  padding: 30px;
-  display: grid;
-  grid-template-columns: 1fr 280px;
-  gap: 24px;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
 }
 
-header {
-  grid-column: 1 / -1;
+.hero {
+  padding: 60px 40px 30px;
   text-align: center;
-  margin-bottom: 12px;
 }
 
-header h1 {
-  font-size: 32px;
+.hero h1 {
+  font-size: 48px;
+  letter-spacing: -1px;
 }
 
-header p {
-  opacity: 0.6;
+.hero p {
+  opacity: 0.7;
+  margin-top: 8px;
 }
 
-nav {
-  grid-column: 1 / -1;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-}
-
-nav button {
-  padding: 8px 14px;
-  border-radius: 20px;
-  border: 1px solid #ddd;
-  background: white;
-  cursor: pointer;
-}
-
-nav button.active {
-  background: #111;
-  color: white;
-}
-
-.grid {
+.experience {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: 120px 1fr;
+  gap: 40px;
+  padding: 40px;
+}
+
+/* Rail */
+.rail {
+  display: flex;
+  flex-direction: column;
   gap: 16px;
 }
 
-.card {
-  background: white;
-  padding: 16px;
-  border-radius: 16px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-}
-
-.card h3 {
-  margin-bottom: 6px;
-}
-
-.card p {
-  font-size: 14px;
-  opacity: 0.7;
-  margin-bottom: 10px;
-}
-
-.card button {
+.rail-btn {
+  background: none;
   border: none;
-  background: #4f46e5;
-  color: white;
-  padding: 8px;
-  width: 100%;
-  border-radius: 10px;
+  text-align: left;
+  font-size: 15px;
+  color: var(--brown);
+  opacity: 0.5;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-.cart {
-  background: white;
-  padding: 18px;
+.rail-btn.active {
+  opacity: 1;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* Panels */
+.content {
+  position: relative;
+  min-height: 300px;
+}
+
+.panel {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.5s ease;
+  padding: 40px;
+  background: var(--paper);
+  border-radius: 28px;
+}
+
+.panel.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.panel h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.panel p {
+  max-width: 520px;
+  line-height: 1.6;
+}
+
+.meta {
+  display: block;
+  margin-top: 16px;
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+/* Ritual */
+.ritual {
+  display: flex;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.step {
+  padding: 14px 18px;
+  background: #fff;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  height: fit-content;
-}
-
-.cart h2 {
-  margin-bottom: 10px;
-}
-
-.cart ul {
-  list-style: none;
-  margin-bottom: 10px;
-}
-
-.cart li {
   font-size: 14px;
-  margin-bottom: 6px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  animation: rise 0.6s ease forwards;
 }
 
-.total {
-  font-weight: bold;
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
