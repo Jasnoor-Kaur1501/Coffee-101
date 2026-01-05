@@ -8,27 +8,57 @@
 </head>
 <body>
 
-  <header>
-    <h1>BrewNotes</h1>
-    <p>Learn coffee. One brew at a time.</p>
-  </header>
+<header class="hero">
+  <h1>BrewNotes</h1>
+  <p>Learn coffee the way it’s actually brewed.</p>
+</header>
 
-  <nav>
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="coffee">Coffee</button>
-    <button class="filter-btn" data-filter="brew">Brew Methods</button>
-  </nav>
+<main class="experience">
 
-  <main>
-    <section id="menuItems" class="grid"></section>
-  </main>
+  <!-- Knowledge Rail -->
+  <section class="rail">
+    <button class="rail-btn active" data-view="origins">Origins</button>
+    <button class="rail-btn" data-view="roast">Roast</button>
+    <button class="rail-btn" data-view="brew">Brew</button>
+    <button class="rail-btn" data-view="taste">Taste</button>
+  </section>
 
-  <aside class="cart">
-    <h2>Your Notes</h2>
-    <ul id="cartItems"></ul>
-    <p class="total">Saved topics: <span id="totalPrice">0</span></p>
-  </aside>
+  <!-- Content Area -->
+  <section class="content">
 
-  <script src="script.js"></script>
+    <div class="panel active" id="origins">
+      <h2>Ethiopia</h2>
+      <p>Birthplace of coffee. Floral, acidic, tea-like.</p>
+      <span class="meta">High altitude · Washed process</span>
+    </div>
+
+    <div class="panel" id="roast">
+      <h2>Medium Roast</h2>
+      <p>Balanced acidity, developed sugars, expressive origin.</p>
+      <span class="meta">205–215°C · 12–14% weight loss</span>
+    </div>
+
+    <div class="panel" id="brew">
+      <h2>Pour Over</h2>
+      <p>Manual extraction focused on clarity and control.</p>
+
+      <div class="ritual">
+        <div class="step">Bloom · 30s</div>
+        <div class="step">Circular Pour</div>
+        <div class="step">Drawdown</div>
+      </div>
+    </div>
+
+    <div class="panel" id="taste">
+      <h2>Flavor Notes</h2>
+      <p>Stone fruit, honey, soft citrus.</p>
+      <span class="meta">High clarity · Light body</span>
+    </div>
+
+  </section>
+
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
