@@ -4,85 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BrewNotes</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>BrewNotes</h1>
-    <p>Understanding coffee through process, not recipes.</p>
-    <span class="scroll-hint">Scroll to begin ↓</span>
-  </section>
+<nav class="nav">
+  <div class="logo">BrewNotes</div>
+  <div class="links">
+    <a href="index.html" class="active">Home</a>
+    <a href="method.html">Methods</a>
+    <a href="science.html">Science</a>
+    <a href="equipment.html">Equipment</a>
+  </div>
+</nav>
 
-  <!-- INTRO -->
-  <section class="section reveal">
-    <h2>What is Pour Over?</h2>
-    <p>
-      Pour over is manual brewing. Every variable is exposed, which means
-      every mistake is visible — and every improvement is earned.
-    </p>
-  </section>
+<section class="hero reveal">
+  <h1>Learn coffee the real way.</h1>
+  <p>BrewNotes is a living coffee knowledge system. From beans to bitterness. From tools to taste.</p>
+</section>
 
-  <!-- TIMELINE -->
-  <section class="timeline">
-    <div class="timeline-track">
-      <div class="step reveal" data-step="1">
-        <h3>Bloom</h3>
-        <p>
-          Fresh coffee releases trapped CO₂ when water hits it.
-          Blooming lets gases escape so extraction can happen evenly.
-        </p>
-      </div>
+<section class="editorial reveal">
+  <h2>What is BrewNotes?</h2>
+  <p>
+    BrewNotes is not recipes. It’s understanding.  
+    Why grind changes flavor. Why water matters. Why espresso is violent and pour-over is slow.
+  </p>
+</section>
 
-      <div class="step reveal" data-step="2">
-        <h3>Pour</h3>
-        <p>
-          Controlled pouring maintains an even slurry.
-          Circular motion prevents channeling.
-        </p>
-      </div>
+<section class="grid reveal">
+  <a href="method.html" class="card">☕ Brew Methods</a>
+  <a href="science.html" class="card">🧪 Coffee Science</a>
+  <a href="equipment.html" class="card">⚙ Equipment</a>
+</section>
 
-      <div class="step reveal" data-step="3">
-        <h3>Drawdown</h3>
-        <p>
-          Final extraction occurs as water drains.
-          Time here reveals grind and ratio errors.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- VARIABLES -->
-  <section class="section reveal">
-    <h2>Control Variables</h2>
-    <ul class="variables">
-      <li>Grind Size</li>
-      <li>Water Temperature</li>
-      <li>Coffee Ratio</li>
-      <li>Pour Speed</li>
-    </ul>
-  </section>
-
-  <!-- FAILURES -->
-  <section class="section reveal">
-    <h2>Common Failures</h2>
-    <p>
-      Bitter coffee is often over-extraction.
-      Sour coffee usually means under-extraction.
-      The fix is rarely changing everything at once.
-    </p>
-  </section>
-
-  <!-- CLOSING -->
-  <section class="section closing reveal">
-    <h2>How to Practice</h2>
-    <p>
-      Change one variable at a time.
-      Taste. Adjust. Repeat.
-    </p>
-  </section>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
