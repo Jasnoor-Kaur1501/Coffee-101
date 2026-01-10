@@ -111,6 +111,48 @@ body {
   transition: 0.8s ease;
 }
 
+.pull-quote {
+  max-width: 700px;
+  margin: 140px auto;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-align: center;
+  color: #3b2a22;
+  opacity: 0.9;
+}
+
+.footer {
+  margin-top: 160px;
+  padding: 80px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.5;
+}
+
+/* Scroll reveal system */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reading width control */
+
+.brew-section,
+.editorial,
+.hero {
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
