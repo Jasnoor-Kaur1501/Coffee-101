@@ -224,11 +224,32 @@ body {
 .cold     { bottom: 40px; right: 120px; }
 .aero     { top: 170px; left: 46%; transform: translateX(-50%); }
 
-
 }
-
 
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
+
+.map-point {
+  animation: floatIn 0.6s ease forwards;
+  opacity: 0;
+}
+
+.map-point:nth-child(1) { animation-delay: 0.1s; }
+.map-point:nth-child(2) { animation-delay: 0.2s; }
+.map-point:nth-child(3) { animation-delay: 0.3s; }
+.map-point:nth-child(4) { animation-delay: 0.4s; }
+.map-point:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
