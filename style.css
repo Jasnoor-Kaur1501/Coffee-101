@@ -246,6 +246,68 @@ body {
   from {
     opacity: 0;
     transform: translateY(12px) scale(0.95);
+
+    .method-map {
+  margin: 160px 0;
+  text-align: center;
+}
+
+.map {
+  position: relative;
+  max-width: 760px;
+  height: 440px;
+  margin: 60px auto;
+  background: linear-gradient(180deg, #efe3d3, #f6eddc);
+  border-radius: 32px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+}
+
+.axis.horizontal {
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  right: 6%;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+.axis.vertical {
+  position: absolute;
+  left: 50%;
+  top: 6%;
+  bottom: 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+.points {
+  position: absolute;
+  inset: 0;
+}
+
+.point {
+  position: absolute;
+  left: calc(var(--x) * 1%);
+  bottom: calc(var(--y) * 1%);
+  transform: translate(-50%, 50%);
+  background: #e7dac8;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  box-shadow: 0 12px 22px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.point:hover {
+  transform: translate(-50%, 50%) scale(1.08);
+}
+
   }
   to {
     opacity: 1;
