@@ -344,4 +344,10 @@ body {
   margin-bottom: 8px;
 }
 
+.science-card.active {
+  outline: 2px solid rgba(90,60,30,0.4);
+  background: #e6d6c2;
+}
+
+
 
