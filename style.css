@@ -349,5 +349,16 @@ body {
   background: #e6d6c2;
 }
 
+.equip-stack {
+  margin-top: 20px;
+  list-style: none;
+}
+
+.equip-stack li {
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(0,0,0,0.15);
+  opacity: 0.8;
+}
+
 
 
