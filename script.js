@@ -8,18 +8,16 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.12 });
 
+reveals.forEach(r => observer.observe(r));
+
 document.querySelectorAll(".point").forEach(point => {
   point.addEventListener("click", () => {
     alert(`${point.innerText} occupies a different position in force, clarity, and contact time.`);
   });
 });
 
-
-reveals.forEach(r => observer.observe(r));
-
 document.querySelectorAll(".science-card").forEach(card => {
   card.addEventListener("click", () => {
     card.classList.toggle("active");
   });
 });
-
