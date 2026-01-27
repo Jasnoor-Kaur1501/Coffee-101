@@ -9,7 +9,7 @@ This project is built as an editorial-style educational website that explains:
 - equipment philosophy
 - how flavor actually forms
 
-Live site: [add your deployed link]
+Live site: https://jasnoor-kaur1501.github.io/BrewNotes/
 
 Built with: HTML, CSS, JavaScript  
 Status: actively growing
