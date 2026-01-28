@@ -1,1 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comic Neue","Comic Sans MS",system-ui,sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: radial-gradient(circle at top, #f3e8d8, #c8a27a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #3a2617;
+}
+
+.station {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+
+.background-glow {
+  position:absolute;
+  inset:0;
+  background: radial-gradient(circle at 50% 20%, rgba(255,220,180,0.35), transparent 60%);
+  animation: glow 6s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { opacity:0.5; }
+  to { opacity:1; }
+}
+
+.counter {
+  position: relative;
+  width: 700px;
+  height: 260px;
+  background: linear-gradient(180deg, #d7b48a, #b3875a);
+  border-radius: 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.25);
+}
+
+.tool {
+  padding: 16px 22px;
+  background: rgba(255,255,255,0.35);
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: 0.4s;
+  user-select:none;
+}
+
+.tool:hover {
+  transform: translateY(-6px) scale(1.05);
+  background: rgba(255,255,255,0.6);
+}
+
+.cup-area {
+  position: relative;
+  width: 140px;
+  height: 160px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+}
+
+.cup {
+  width: 110px;
+  height: 90px;
+  border-radius: 0 0 28px 28px;
+  border: 4px solid #4a2e1a;
+  position: relative;
+  overflow:hidden;
+  background: #f7efe6;
+}
+
+.cup::after {
+  content:"";
+  position:absolute;
+  right:-22px;
+  top:18px;
+  width:28px;
+  height:38px;
+  border:4px solid #4a2e1a;
+  border-left:none;
+  border-radius:0 18px 18px 0;
+}
+
+.coffee {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:0%;
+  background: linear-gradient(180deg, #6f3b1d, #3b1f10);
+  transition: 2s ease;
+}
+
+.steam {
+  position:absolute;
+  top:-40px;
+  width:100%;
+  height:60px;
+  opacity:0.6;
+  background:
+    radial-gradient(circle at 30% 80%, rgba(255,255,255,0.7), transparent 40%),
+    radial-gradient(circle at 60% 20%, rgba(255,255,255,0.6), transparent 40%);
+  filter: blur(6px);
+  animation: steam 4s ease-in-out infinite;
+}
+
+@keyframes steam {
+  0% { transform: translateY(0); opacity:0.2; }
+  50% { transform: translateY(-12px); opacity:0.6; }
+  100% { transform: translateY(0); opacity:0.2; }
+}
+
+.hint {
+  margin-top: 26px;
+  opacity:0.6;
+  letter-spacing:0.3px;
+}
 
