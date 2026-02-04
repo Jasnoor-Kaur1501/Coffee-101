@@ -56,6 +56,21 @@ function updateBrew() {
 grind?.addEventListener("input", updateBrew);
 time?.addEventListener("input", updateBrew);
 
+    // Learning progress tracker
+let visited = JSON.parse(localStorage.getItem("brewnotes-progress")) || 0;
+
+document.querySelectorAll(".brew-section").forEach(sec => {
+  sec.addEventListener("click", () => {
+    visited++;
+    localStorage.setItem("brewnotes-progress", visited);
+  });
+});
+
+    const progressText = document.getElementById("progress-text");
+if (progressText) {
+  progressText.innerText = `You’ve explored ${visited} concepts so far.`;
+}
+
 
   });
 });
