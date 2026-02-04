@@ -20,5 +20,23 @@ document.querySelectorAll(".brew-section").forEach(section => {
   });
 });
 
+  // Method map focus
+document.querySelectorAll(".map-point").forEach(point => {
+  point.addEventListener("click", () => {
+    const name = point.innerText.toLowerCase();
+
+    document.querySelectorAll(".brew-section").forEach(sec => {
+      sec.classList.remove("focused");
+    });
+
+    document.querySelectorAll(".brew-section h2").forEach(h2 => {
+      if (h2.innerText.toLowerCase().includes(name)) {
+        h2.parentElement.classList.add("focused");
+        h2.parentElement.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    });
+  });
+});
+
   });
 });
