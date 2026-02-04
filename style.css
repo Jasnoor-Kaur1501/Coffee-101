@@ -147,11 +147,15 @@ background:#e6d6c2;
   border-radius: 18px;
 }
 
-
-
 .footer{
 margin-top:160px;
 padding:80px;
 text-align:center;
 opacity:0.5;
 }
+
+input[type="range"] {
+  width: 100%;
+  margin: 12px 0;
+}
+
