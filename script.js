@@ -30,15 +30,20 @@ document.querySelectorAll(".science-card").forEach(card => {
    Interactive brew sections
 ---------------------------- */
 
+let visited = JSON.parse(localStorage.getItem("brewnotes-progress")) || 0;
+
 document.querySelectorAll(".brew-section").forEach(section => {
   section.addEventListener("click", () => {
     section.classList.toggle("active-section");
+    visited++;
+    localStorage.setItem("brewnotes-progress", visited);
+    updateProgress();
   });
 });
 
 
 /* ----------------------------
-   Method map focus system
+   Method map → content focus
 ---------------------------- */
 
 document.querySelectorAll(".map-point").forEach(point => {
@@ -51,8 +56,9 @@ document.querySelectorAll(".map-point").forEach(point => {
 
     document.querySelectorAll(".brew-section h2").forEach(h2 => {
       if (h2.innerText.toLowerCase().includes(name)) {
-        h2.parentElement.classList.add("focused");
-        h2.parentElement.scrollIntoView({
+        const section = h2.parentElement;
+        section.classList.add("focused");
+        section.scrollIntoView({
           behavior: "smooth",
           block: "center"
         });
@@ -63,43 +69,14 @@ document.querySelectorAll(".map-point").forEach(point => {
 
 
 /* ----------------------------
-   Brew simulator logic
+   Progress text
 ---------------------------- */
 
-const grind = document.getElementById("grind");
-const time = document.getElementById("time");
-const result = document.getElementById("brew-result");
-
-function updateBrew() {
-  if (!grind || !time || !result) return;
-
-  if (grind.value == 1 && time.value == 1) {
-    result.innerText = "Under-extracted. Sour and thin.";
-  } else if (grind.value == 3 && time.value == 3) {
-    result.innerText = "Over-extracted. Bitter and dry.";
-  } else {
-    result.innerText = "Balanced extraction. Sweet and clear.";
+function updateProgress() {
+  const progressText = document.getElementById("progress-text");
+  if (progressText) {
+    progressText.innerText = `You’ve explored ${visited} concepts so far.`;
   }
 }
 
-grind?.addEventListener("input", updateBrew);
-time?.addEventListener("input", updateBrew);
-
-
-/* ----------------------------
-   Learning progress tracker
----------------------------- */
-
-let visited = JSON.parse(localStorage.getItem("brewnotes-progress")) || 0;
-
-document.querySelectorAll(".brew-section").forEach(sec => {
-  sec.addEventListener("click", () => {
-    visited++;
-    localStorage.setItem("brewnotes-progress", visited);
-  });
-});
-
-const progressText = document.getElementById("progress-text");
-if (progressText) {
-  progressText.innerText = `You’ve explored ${visited} concepts so far.`;
-}
+updateProgress();
