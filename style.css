@@ -193,4 +193,11 @@ input[type="range"] {
   cursor: pointer;
 }
 
+.card,
+.block,
+.map-frame,
+.science-card {
+  background: #f2e6d8;
+}
+
 
