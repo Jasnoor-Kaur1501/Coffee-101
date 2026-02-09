@@ -72,3 +72,51 @@ border-radius:999px;
 .aero{top:120px;left:45%;}
 
 .footer{text-align:center;padding:60px;opacity:0.6;}
+
+/* ACTIVE SECTION CLICK */
+.active-section {
+  outline: 2px solid rgba(120,80,40,0.3);
+  background: #f0e4d3;
+}
+
+/* FOCUSED FROM MAP */
+.focused {
+  outline: 2px solid #6b3e1f;
+  background: #f3e6d5;
+}
+
+/* DARKER BEIGE THEME */
+body {
+  background:#e7d7c3;
+  color:#4a2c18;
+}
+
+.nav {
+  background:rgba(231,215,195,0.7);
+}
+
+.card,.block,.science-card {
+  background:#eddcc7;
+}
+
+.map-frame{
+  background:#e2cfb6;
+}
+
+/* SIMULATOR */
+.brew-sim{
+  margin:120px auto;
+  max-width:700px;
+  text-align:center;
+}
+
+.brew-sim input[type=range]{
+  width:100%;
+  margin:20px 0;
+}
+
+#brew-result{
+  margin-top:20px;
+  font-weight:600;
+}
+
