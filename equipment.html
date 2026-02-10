@@ -1,30 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Equipment</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment | BrewNotes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
-
 <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">BrewNotes</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="method.html">Methods</a></li>
+                <li><a href="science.html">Science</a></li>
+                <li><a href="equipment.html" class="active">Equipment</a></li>
+                <li><a href="station.html">Station</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<nav class="nav">
-<a href="index.html" class="logo">BrewNotes</a>
-<div class="links">
-<a href="index.html">Home</a>
-<a href="method.html">Methods</a>
-<a href="science.html">Science</a>
-<a href="equipment.html" class="active">Equipment</a>
-<a href="station.html">Station</a>
-</div>
-</nav>
+    <header class="page-header container">
+        <h1 class="reveal">The Arsenal</h1>
+        <p class="reveal">The tools required for precision brewing.</p>
+    </header>
 
-<section class="page reveal">
-<h1>Equipment</h1>
-<p>Tools shape extraction.</p>
-</section>
+    <section class="container equipment-grid">
+        <div class="card equip-card reveal">
+            <div class="icon">⚙️</div>
+            <h3>Burr Grinder</h3>
+            <p>Consistency is everything. Blade grinders shatter; burr grinders shave for a uniform grind size.</p>
+        </div>
+        <div class="card equip-card reveal">
+            <div class="icon">☕</div>
+            <h3>Gooseneck Kettle</h3>
+            <p>Precision pouring allows you to control the agitation of the grounds during the extraction.</p>
+        </div>
+        <div class="card equip-card reveal">
+            <div class="icon">⚖️</div>
+            <h3>Digital Scale</h3>
+            <p>Eliminate guesswork. A 1g difference can change the entire flavor profile of your cup.</p>
+        </div>
+        <div class="card equip-card reveal">
+            <div class="icon">⏱️</div>
+            <h3>Timer</h3>
+            <p>Track your draw-down time to ensure extraction consistency from brew to brew.</p>
+        </div>
+        <div class="card equip-card reveal">
+            <div class="icon">📄</div>
+            <h3>Filters</h3>
+            <p>Each brand has different thickness and porosity, affecting the flow rate and oil filtration.</p>
+        </div>
+        <div class="card equip-card reveal">
+            <div class="icon">🌡️</div>
+            <h3>Temp Probe</h3>
+            <p>Perfect for ensuring your water isn't too hot or too cold for the roast level you have.</p>
+        </div>
+    </section>
 
-<script src="script.js"></script>
+    <section class="container reveal">
+        <div class="cta-banner">
+            <div>
+                <h3>Ready to Brew?</h3>
+                <p>Head over to the Coffee Station and practice your pouring technique in our simulator.</p>
+            </div>
+            <a href="station.html" class="btn secondary">Go to Station</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <h2>BrewNotes</h2>
+        <p>&copy; 2024 BrewNotes Collective. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
