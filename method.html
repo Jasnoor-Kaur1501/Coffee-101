@@ -1,77 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Methods — BrewNotes</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods | BrewNotes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
-
 <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">BrewNotes</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="method.html" class="active">Methods</a></li>
+                <li><a href="science.html">Science</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+                <li><a href="station.html">Station</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<nav class="nav">
-<a href="index.html" class="logo">BrewNotes</a>
-<div class="links">
-<a href="index.html">Home</a>
-<a href="method.html" class="active">Methods</a>
-<a href="science.html">Science</a>
-<a href="equipment.html">Equipment</a>
-<a href="station.html">Station</a>
-</div>
-</nav>
+    <header class="page-header container">
+        <h1 class="reveal">Brewing Methods</h1>
+        <p class="reveal">Find the perfect technique for your beans.</p>
+    </header>
 
-<section class="page reveal">
-<h1>Brew Methods</h1>
-<p>Different methods change extraction physics.</p>
-</section>
+    <section class="container reveal">
+        <div class="method-map-container">
+            <h3 class="italic-title">Method Map</h3>
+            <div class="method-map">
+                <button class="map-bubble v60" onclick="scrollToElement('v60')">V60</button>
+                <button class="map-bubble chemex" onclick="scrollToElement('chemex')">Chemex</button>
+                <button class="map-bubble aero" onclick="scrollToElement('aero')">Aero</button>
+                <button class="map-bubble press" onclick="scrollToElement('press')">Press</button>
+            </div>
+        </div>
+    </section>
 
-<section class="brew-section reveal"><h2>Pour Over</h2><p>Clarity and control.</p></section>
-<section class="brew-section reveal"><h2>Espresso</h2><p>Pressure and intensity.</p></section>
-<section class="brew-section reveal"><h2>French Press</h2><p>Immersion and body.</p></section>
+    <section class="container reveal">
+        <div class="simulator-card">
+            <h2>Brew Ratio Simulator</h2>
+            <div class="simulator-grid">
+                <div class="sliders">
+                    <div class="slider-group">
+                        <label>Coffee Amount: <span id="coffee-val">20</span>g</label>
+                        <input type="range" id="coffee-slider" min="10" max="60" value="20">
+                    </div>
+                    <div class="slider-group">
+                        <label>Water Ratio: 1:<span id="ratio-val">16</span></label>
+                        <input type="range" id="ratio-slider" min="12" max="20" step="0.5" value="16">
+                    </div>
+                </div>
+                <div class="result-display">
+                    <p class="label">Total Yield</p>
+                    <div class="yield-number"><span id="total-yield">320</span></div>
+                    <p class="unit">grams of water</p>
+                    <div class="strength-tag" id="strength-tag">Strength: Balanced & Sweet</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="method-map reveal">
-<h2>Brew Method Map</h2>
+    <section class="container method-grid">
+        <div id="v60" class="card method-card reveal">
+            <h3>Hario V60</h3>
+            <p>The gold standard for clarity and brightness. Its conical shape and spiral ribs allow for a focused extraction.</p>
+            <div class="pro-tip"><strong>Pro Tip:</strong> Use a gooseneck kettle for precision and slow, circular pours.</div>
+        </div>
+        <div id="chemex" class="card method-card reveal">
+            <h3>Chemex</h3>
+            <p>Elegant glass design with thick filters that catch more oils and sediment for an incredibly clean cup.</p>
+            <div class="pro-tip"><strong>Pro Tip:</strong> Rinse filters thoroughly with hot water to remove any paper taste.</div>
+        </div>
+        <div id="aero" class="card method-card reveal">
+            <h3>AeroPress</h3>
+            <p>Versatile, durable, and quick. It uses air pressure to push coffee through a filter, reducing bitterness.</p>
+            <div class="pro-tip"><strong>Pro Tip:</strong> Try the "inverted method" for more immersion and body.</div>
+        </div>
+        <div id="press" class="card method-card reveal">
+            <h3>French Press</h3>
+            <p>Classic immersion brewing. Coarsely ground beans sit in water for minutes, resulting in a rich, heavy body.</p>
+            <div class="pro-tip"><strong>Pro Tip:</strong> Don't press too hard at the end to avoid forcing silt through the mesh.</div>
+        </div>
+    </section>
 
-<div class="map-frame">
-<div class="map-axis vertical"><span>Clarity</span><span>Texture</span></div>
-<div class="map-axis horizontal"><span>Gravity</span><span>Pressure</span></div>
+    <footer class="footer">
+        <h2>BrewNotes</h2>
+        <p>Crafting the perfect cup, one note at a time.</p>
+        <p class="copyright">&copy; 2024 BrewNotes Collective. All rights reserved.</p>
+    </footer>
 
-<div class="map-grid">
-<div class="map-point pour">Pour Over</div>
-<div class="map-point espresso">Espresso</div>
-<div class="map-point french">French Press</div>
-<div class="map-point cold">Cold Brew</div>
-<div class="map-point aero">AeroPress</div>
-</div>
-</div>
-</section>
-
-<section class="brew-section reveal">
-<h2>Simulate Extraction</h2>
-
-<label>Grind</label>
-<input type="range" id="grind" min="1" max="3" value="2">
-
-<label>Time</label>
-<input type="range" id="time" min="1" max="3" value="2">
-
-<p id="brew-result">Adjust variables.</p>
-</section>
-
-  <section class="brew-sim reveal">
-<h2>Simulate a Brew</h2>
-<p>Adjust variables and see what happens.</p>
-
-<p>Grind Size</p>
-<input type="range" id="grind" min="1" max="3" value="2">
-
-<p>Contact Time</p>
-<input type="range" id="time" min="1" max="3" value="2">
-
-<p id="brew-result">Adjust variables to begin.</p>
-</section>
-
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
