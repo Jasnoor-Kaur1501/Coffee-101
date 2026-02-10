@@ -1,85 +1,63 @@
-// SCROLL REVEAL
-const reveals = document.querySelectorAll(".reveal");
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add("active");
-  });
-}, { threshold: 0.12 });
-
-reveals.forEach(r => observer.observe(r));
-
-
-// SCIENCE CARD TOGGLE
-document.querySelectorAll(".science-card").forEach(card => {
-  card.addEventListener("click", () => {
-    card.classList.toggle("active");
-  });
-});
-
-
-// BREW SECTION CLICK = highlight
-document.querySelectorAll(".brew-section").forEach(section => {
-  section.addEventListener("click", () => {
-    section.classList.toggle("active-section");
-  });
-});
-
-
-// METHOD MAP CLICK → SCROLL TO SECTION
-document.querySelectorAll(".map-point").forEach(point => {
-  point.addEventListener("click", () => {
-    const name = point.innerText.toLowerCase();
-
-    document.querySelectorAll(".brew-section").forEach(sec => {
-      sec.classList.remove("focused");
+// Scroll Reveal Observer
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
     });
+}, { threshold: 0.1 });
 
-    document.querySelectorAll(".brew-section h2").forEach(h2 => {
-      if (h2.innerText.toLowerCase().includes(name)) {
-        const parent = h2.parentElement;
-        parent.classList.add("focused");
-        parent.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-    });
-  });
-});
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-
-// BREW SIMULATOR (sliders)
-const grind = document.getElementById("grind");
-const time = document.getElementById("time");
-const result = document.getElementById("brew-result");
-
-function updateBrew() {
-  if (!grind || !time || !result) return;
-
-  const g = Number(grind.value);
-  const t = Number(time.value);
-
-  if (g <= 1 && t <= 1)
-    result.innerText = "Under-extracted. Sour and thin.";
-  else if (g >= 3 && t >= 3)
-    result.innerText = "Over-extracted. Bitter and dry.";
-  else
-    result.innerText = "Balanced extraction. Sweet and clear.";
+// Smooth Scrolling
+function scrollToElement(id) {
+    const el = document.getElementById(id);
+    if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
 }
 
-if (grind) grind.addEventListener("input", updateBrew);
-if (time) time.addEventListener("input", updateBrew);
+// Brew Simulator Logic
+const coffeeSlider = document.getElementById('coffee-slider');
+const ratioSlider = document.getElementById('ratio-slider');
 
+if (coffeeSlider && ratioSlider) {
+    const coffeeVal = document.getElementById('coffee-val');
+    const ratioVal = document.getElementById('ratio-val');
+    const totalYield = document.getElementById('total-yield');
+    const strengthTag = document.getElementById('strength-tag');
 
-// PROGRESS TRACKER
-let visited = JSON.parse(localStorage.getItem("brewnotes-progress")) || 0;
+    function updateSimulation() {
+        const coffee = parseFloat(coffeeSlider.value);
+        const ratio = parseFloat(ratioSlider.value);
+        const yield = Math.round(coffee * ratio);
 
-document.querySelectorAll(".brew-section").forEach(sec => {
-  sec.addEventListener("click", () => {
-    visited++;
-    localStorage.setItem("brewnotes-progress", visited);
-  });
-});
+        coffeeVal.textContent = coffee;
+        ratioVal.textContent = ratio;
+        totalYield.textContent = yield;
 
-const progressText = document.getElementById("progress-text");
-if (progressText) {
-  progressText.innerText = `You’ve explored ${visited} concepts so far.`;
+        if (ratio < 15) {
+            strengthTag.textContent = "Strength: Bold & Intense";
+        } else if (ratio > 17) {
+            strengthTag.textContent = "Strength: Light & Tea-like";
+        } else {
+            strengthTag.textContent = "Strength: Balanced & Sweet";
+        }
+    }
+
+    coffeeSlider.addEventListener('input', updateSimulation);
+    ratioSlider.addEventListener('input', updateSimulation);
+}
+
+// Accordion Toggle
+function toggleAccordion(header) {
+    const item = header.parentElement;
+    const isActive = item.classList.contains('active');
+    
+    // Close others
+    document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
+    
+    if (!isActive) {
+        item.classList.add('active');
+    }
 }
